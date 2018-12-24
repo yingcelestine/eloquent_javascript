@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 id="mypage">my page</h1>
+
+    <script>
+        // let caught = 5 * 5;
+        // alert("caught: " + caught);
+        // document.getElementById("mypage").textContent = "old page";
+        // let x = 30;
+        // console.log("the value of x is", x);
+        //         console.log("#");
+        //         console.log("##");
+        //         console.log("###");
+        //         for (let i= "#"; i < "########"; i += "#") {
+        // console.log(i);
+        //         } 
+        // for (let i = 1; i < 101; i++) {
+        //     if(i % 3 == 0 && i % 5 != 0) {
+        //         console.log("Fizz");
+        //     } else if (i % 5 == 0 && i % 3 != 0) {
+        //         console.log("Buzz");
+        //     } else if (i % 5 == 0 && i % 3 == 0) {
+        //         console.log("FizzBuzz");
+        //     }
+        //         else {
+        //         console.log(i);
+        //     }
+        // };    
+
+        for (let i = 1; i < 101; i++) {
+            let message = "";
+            if (i % 3 == 0) {
+                message += "Fizz";
+            }
+            if (i % 5 == 0) {
+                message += "Buzz";
+            }
+            // message !== "" ? console.log(message) : console.log(i);
+            let x = message || i;
+            console.log(x);
+        };
+
+
+
+    </script>
+</body>
+
+</html>
