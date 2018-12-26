@@ -37,18 +37,77 @@
         //     }
         // };    
 
-        for (let i = 1; i < 101; i++) {
-            let message = "";
-            if (i % 3 == 0) {
-                message += "Fizz";
-            }
-            if (i % 5 == 0) {
-                message += "Buzz";
-            }
-            // message !== "" ? console.log(message) : console.log(i);
-            let x = message || i;
-            console.log(x);
-        };
+        // for (let i = 1; i < 101; i++) {
+        //     let message = "";
+        //     if (i % 3 == 0) {
+        //         message += "Fizz";
+        //     }
+        //     if (i % 5 == 0) {
+        //         message += "Buzz";
+        //     }
+        //     // message !== "" ? console.log(message) : console.log(i);
+        //     let x = message || i;
+        //     console.log(x);
+        // };
+        // for (let i = 1; i < 9; i++) {
+        //     if (i % 2 == 0) {
+        //         console.log('# # # #');
+        //     } else {
+        //         console.log(' # # # #');
+        //     }
+        // };
+        // let row = "";
+        // const makerow = (size) => {
+        //     for (let i = 0; i < size; i++) {
+        //         let a = ""; b = 
+        //         if ()
+        //     }
+        // }
+    //    const hummus = (factor) =>{
+    //        const ingredient = function(amount, unit, name) {
+    //            let ingredientAmount = amount * factor;
+    //            if (ingredientAmount > 1) {
+    //                unit += "s";
+    //            }
+    //            console.log(`${ingredientAmount} ${unit} ${name}`);
+    //        }
+    //        ingredient(1, "can", "chickpeas");
+    //        ingredient(0.25, "cup", "tahini");
+    //    };
+    //    hummus(4);
+//     function greet(who) {
+//   console.log("Hello " + who);
+// }
+// greet("Harry");
+// console.log("Bye");
+// function minus (a, b) {
+//     if (b === undefined) return -a;
+//     else return a-b;
+// }
+// console.log(minus(10));
+// console.log(minus(10, 5));
+// function power(base,exponent = 2) {
+//     let result = 1;
+//     for (let count = 0; count < exponent; count++) {
+//         result *= base;
+//     }
+//     return result;
+// }
+// console.log(power(4));
+// console.log(power(2,6));
+// function multiplier(factor) {
+//     return number => number * factor;
+//     }
+//     let twice = multiplier(2);
+//     console.log(twice(5));
+function power(a, b) {
+    if(b == 0) {
+        return 1;
+    }else {
+        return a * power(a, b - 1);
+    }
+}
+console.log(power(2,3));
 
 
 

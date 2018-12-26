@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 id="mypage">my page</h1>
+
+    <script>
+        // let x = 5;
+        // const hummus = (factor) => {
+        //     let x = 55;
+        //     const ingredient = function (amount, unit, name) {
+        //         let ingredientAmount = amount * factor;
+        //         if (ingredientAmount > 1) {
+        //             unit += "s";
+        //         }
+        //         const ff = () => {
+        //             console.log(`${ingredientAmount} ${unit} ${name}`);
+        //         };
+        //         ff();
+        //     }
+        //     ingredient(1, "can", "chickpeas");
+        //     ingredient(0.25, "cup", "tahini");
+        // };
+        // hummus(4);
+        // function greet(who) {
+        //     console.log("Hello " + who);
+        // }
+        // greet("Harry");
+        // console.log("Bye");
+        // function minus (a, b) {
+        //     if (b === undefined) return -a;
+        //     else return a-b;
+        // }
+        // console.log(minus(10));
+        // console.log(minus(10, 5));
+        // function power(base,exponent = 2) {
+        //     let result = 1;
+        //     for (let count = 0; count < exponent; count++) {
+        //         result *= base;
+        //     }
+        //     return result;
+        // }
+        // console.log(power(4));
+        // console.log(power(2,6));
+        // function multiplier(factor) {
+        //     return number => number * factor;
+        //     }
+        //     let twice = multiplier(2);
+        //     console.log(twice(5));
+        // function power(a, b) {
+        //     if (b == 0) {
+        //         return 1;
+        //     } else {
+        //         return a * power(a, b - 1);
+        //     }
+        // }
+        // function power1(a, b) {
+        //     // 1 * a * a * a * a ...
+        //     let result = 1;
+        //     for (let i = 0; i < b; i++) {
+        //         result *= a;
+        //     }
+        //     return result;
+        // }
+        // function power2(a, b) {
+        //     let result = 1, i = 0;
+        //     while (i < b) {
+        //         result *= a;
+        //         i++;
+        //     }
+        //     return result;
+        // }
+        // console.log(power2(2, 3));
+
+        // const factorial = (n) => {
+        //     if (n === 0) {
+        //         return 1;
+        //     } else {
+        //         return n * factorial(n - 1);
+        //     }
+        // }
+        // console.log(factorial(5));
+
+
+        // const factorial1 = (n) => {
+        //     let result = 1;
+        //     for (let i = 0; i < n; i++) {
+        //         result *= (n - i)
+        //     }
+        //     return result;
+        // }
+        // console.log(factorial1(5));
+
+
+        // const factorial2 = (n) => {
+        //     let result = 1, i = 0;
+        //     while (i < n) {
+        //         result *= (n - i);
+        //         i++;
+        //     }
+        //     return result;
+        // }
+        // console.log(factorial2(5));
+
+        // sumArray function
+        // receive an array of numbers
+        // returns the sum of these numbers
+        // for example: sumArray([1, 2, 3]) should return 6
+        // const sumArray = (array) => {
+        //     let sum = 0;
+        //     for (i = 0; i < array.length; i++) {
+        //         number = array[i];
+        //         sum += number;
+        //     }
+        //     return sum;
+        // }
+        // console.log(sumArray([2, 9, 8]));
+        // productArray function
+        // receive an array of numbers
+        // returns the product of these numbers
+        // for example: productArray([1, 2, 3, 4]) should return 24
+
+        // const productArray = (array1) => {
+        //     let product = 1, j = 0;
+        //     while (j < array1.length) {
+        //         number = array1[j];
+        //         j++;
+        //         product *= number;
+        //     }
+        //     return product;
+        // }
+        // console.log(productArray([8, 2, 3, 4]));
+
+        // oddSum function
+        // receive an array of numbers
+        // return the sum of all odd numbers in that array
+        // for example, oddSum([2, 2, 3, 5, 8, 8, 1]) should return 9
+        //              oddSum([7, 7, 12]) should return 14
+        // const oddSum = (array) => {
+        //     let sum = 0;
+        //     for (i = 0; i < array.length; i++) {
+        //         let number = array[i];
+        //         if (number % 2 !== 0) {
+        //             sum += number;
+        //         }
+        //     }
+        //     return sum;
+        // }
+        // console.log(oddSum([7, 6, 7, 12]));
+
+
+        // maxNumber function
+        // receive an array of numbers
+        // return the largest number in that array
+        // for example, maxNumber([2, 2, 3, 5, 8, 8, 1]) should return 8
+        //              maxNumber([7, 7, 12]) should return 12
+        // const maxNumber = (array) => {
+        //     if (!array || array.length === 0) {
+        //         console.log("array length is less than 1");
+        //         return null;
+        //     }
+        //     let i = 0, number = -Infinity;
+        //     while (i < array.length) {
+        //         // if (number >= array[i]) {
+        //         // } else {
+        //         if (number < array[i]) {
+        //             number = array[i];
+        //         }
+        //         i++;
+        //     }
+        //     return number;
+        // }
+        // console.log(maxNumber([9, 23, 1, 99, 0, 776, 43, 45]));
+
+
+
+        // reverseString function
+        // receives a string
+        // returns a string with opposite order
+        // for example, reverseString("abc") should return "cba"
+        // use a for loop
+        const reverseString = (oldString) => {
+            let newStrings = "";
+            for (let i = oldString.length - 1; i >= 0; i--) {
+                let str = oldString[i];
+                newStrings += str;
+            }
+            return newStrings;
+        }
+        console.log(reverseString("Hello"));
+
+        // boxString function
+        // receives a string
+        // return a string with a box around it. 
+        // for example, boxString("ying") should return:
+        // +----+
+        // |ying|
+        // +----+
+
+        const boxString = (oldString) => {
+            const makerow = (oldString) => {
+                let row = "";
+                for (let i = oldString.length; i > 0; i--) {
+                    row += "-";
+                }
+                return  "+" + row + "+\n";
+            }
+            const wrapString = (oldString) => {
+                return  "|" + oldString + "|\n";
+                
+            }
+            const row = makerow(oldString);
+            return row + wrapString(oldString) + row;
+
+        }
+        console.log(boxString("new year"));
+
+        // checkPalindrome function
+        // receive a string
+        // return boolean. if the string and the reversed are the same, then return true, otherwise return false
+        // for example, checkPalindrome("aabbcc") should return false. 
+        // for example, checkPalindrome("aabbaa") should return true. 
+
+
+
+
+        // 2 * power(2, 2)
+        // 2 * (2 * power(2, 1))
+        // 2 * (2 * (2 * power(2, 0)))
+
+        // closure
+        // const counter = () => {
+        //     let _number = 0;
+        //     return () => {
+        //         _number++;
+        //         return _number;
+        //     }
+        // }
+        // let mycounter = counter();
+
+        // loops
+        // for (let i = 0; i < 10; i++) {
+        //     console.log(mycounter());
+        // }
+        // let i = 0;
+        // while (i < 10) {
+        //     console.log(mycounter());
+        //     i++;
+        // }
+
+    </script>
+</body>
+
+</html>
