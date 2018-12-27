@@ -187,15 +187,17 @@
         // returns a string with opposite order
         // for example, reverseString("abc") should return "cba"
         // use a for loop
-        // const reverseString = (oldString) => {
-        //     let newStrings = "";
-        //     for (let i = oldString.length - 1; i >= 0; i--) {
-        //         let str = oldString[i];
-        //         newStrings += str;
-        //     }
-        //     return newStrings;
-        // }
-        // console.log(reverseString("Hello"));
+        const reverseString = (oldString) => {
+            let newStrings = "";
+            for (let i = oldString.length - 1; i >= 0; i--) {
+                let str = oldString[i];
+                newStrings += str;
+            }
+            return newStrings;
+        }
+        console.log(reverseString("Hello"));
+
+        
 
         // boxString function
         // receives a string

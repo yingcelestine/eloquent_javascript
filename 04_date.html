@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const reverseNumber = (number) => {
+        //     let numberString = String(number), string = "";
+        //     for (i = numberString.length - 1; i >= 0; i--) {
+        //         string += numberString[i];
+        //     }
+        //     return Number(string);
+        // }
+        // console.log(reverseNumber(654432));
+        // const reverseNumber1 = (number) => {
+        //     let array = [];
+        //     for (let i = 9; i >= 0; i--) {
+        //         if (Math.log10(number) >= i) {
+        //              array.length = i + 1;
+        //             const makeArray = (number) => {
+        //                 for (let j = 1; j < 10; j++) {
+        //                     if (number < (j + 1) * Math.pow(10, i) && number > j * Math.pow(10, i)) {
+        //                         array[i] = j;
+
+        //                     } number -= j * Math.pow(10, i);
+        //                     i--;
+        //                 } 
+        //                 return array;
+        //             }
+        //         }
+        //     } 
+        //     return Number(makeArray(number).join(""));
+        // }
+        // console.log(Number(makeArray(68932).join("")));
+        
+        const reverseNumber = (number) => {
+            // find out how many digits the number has.
+            let nDigits = Math.ceil(Math.log10(number));
+            // find out each digit
+            let number1 = 0;
+            for( let i = nDigits-1, j = 0; i >= 0; i--, j++) {
+                let p = Math.pow(10, i);
+                let d = Math.floor(number / p);
+                number1 += d * Math.pow(10, j);
+                number -= d * p;
+            }
+            return number1;
+        }
+
+        console.log(reverseNumber(5544));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
