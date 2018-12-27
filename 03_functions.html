@@ -187,15 +187,15 @@
         // returns a string with opposite order
         // for example, reverseString("abc") should return "cba"
         // use a for loop
-        const reverseString = (oldString) => {
-            let newStrings = "";
-            for (let i = oldString.length - 1; i >= 0; i--) {
-                let str = oldString[i];
-                newStrings += str;
-            }
-            return newStrings;
-        }
-        console.log(reverseString("Hello"));
+        // const reverseString = (oldString) => {
+        //     let newStrings = "";
+        //     for (let i = oldString.length - 1; i >= 0; i--) {
+        //         let str = oldString[i];
+        //         newStrings += str;
+        //     }
+        //     return newStrings;
+        // }
+        // console.log(reverseString("Hello"));
 
         // boxString function
         // receives a string
@@ -205,32 +205,103 @@
         // |ying|
         // +----+
 
-        const boxString = (oldString) => {
-            const makerow = (oldString) => {
-                let row = "";
-                for (let i = oldString.length; i > 0; i--) {
-                    row += "-";
-                }
-                return  "+" + row + "+\n";
-            }
-            const wrapString = (oldString) => {
-                return  "|" + oldString + "|\n";
-                
-            }
-            const row = makerow(oldString);
-            return row + wrapString(oldString) + row;
-
-        }
-        console.log(boxString("new year"));
+        // const boxString = (oldString) => {
+        //     const makerow = (oldString) => {
+        //         let row = "";
+        //         for (let i = oldString.length; i > 0; i--) {
+        //             row += "-";
+        //         }
+        //         return "+" + row + "+\n";
+        //     }
+        //     const wrapString = (oldString) => {
+        //         return "|" + oldString + "|\n";
+        //     }
+        //     const row = makerow(oldString);
+        //     return row + wrapString(oldString) + row;
+        // }
+        // console.log(boxString("Love you~"));
 
         // checkPalindrome function
         // receive a string
         // return boolean. if the string and the reversed are the same, then return true, otherwise return false
         // for example, checkPalindrome("aabbcc") should return false. 
         // for example, checkPalindrome("aabbaa") should return true. 
+        // const checkPalindrome = (oldString) => {
+        //     const reverseString = (oldString) => {
+        //         let newStrings = "";
+        //         for (let i = oldString.length - 1; i >= 0; i--) {
+        //             let str = oldString[i];
+        //             newStrings += str;
+        //         }
+        //         return newStrings;
+        //     }
+        //     return oldString === reverseString(oldString) ? true : false;
+        // }
+        // console.log(checkPalindrome("ainiinia"));
 
+        // function findSolution(target) {
+        //     function find(current, history) {
+        //         if (current == target) {
+        //             return history;
+        //         } else if (current > target) {
+        //             return null;
+        //         } else {
+        //             return find(current + 5, `(${history} + 5)`) || find(current * 3, `(${history} * 3)`);
+        //         }
+        //     }
+        //     return find(1, "1");
+        // }
+        // console.log(findSolution(24));
 
+        function printFarmInventory(cows, chickens) {
+            let cowString = String(cows);
+            while (cowString.length < 3) {
+                cowString = "0" + cowString;
+            }
+            console.log(`${cowString} Cows`);
+            let chickenString = String(chickens);
+            while (chickenString.length < 3) {
+                chickenString = "0" + chickenString;
+            }
+            console.log(`${chickenString} Chickens`);
+        }
+        printFarmInventory(8, 11);
 
+        const isEven = (num) => {
+
+            if (num % 2 === 0 && num > 0) {
+                isEven(num - 2);
+                return true;
+            } else {
+                if (num <= 0) {
+                    return "Please put in a positive."
+                }
+                return false;
+            }
+        }
+        console.log(isEven(50));
+        console.log(isEven(75));
+        console.log(isEven(-1));
+
+        const countBs = (string) => {
+            let count = 0;
+            for (i = 0; i < string.length; i++) {
+                if (string[i] === "B") {
+                    count++;
+                }
+            } return count;
+        }
+        console.log(countBs("BBFF"));
+
+        const countChar = (string, char) => {
+            let count = 0;
+            for (i = 0; i < string.length; i++) {
+                if (string[i] === char) {
+                    count ++;
+                }
+            } return count;
+        }
+console.log(countChar("BBHUIKJGGJUBBB", "J"));
 
         // 2 * power(2, 2)
         // 2 * (2 * power(2, 1))
