@@ -17,34 +17,14 @@
         //     }
         //     return Number(string);
         // }
-        // console.log(reverseNumber(654432));
-        // const reverseNumber1 = (number) => {
-        //     let array = [];
-        //     for (let i = 9; i >= 0; i--) {
-        //         if (Math.log10(number) >= i) {
-        //              array.length = i + 1;
-        //             const makeArray = (number) => {
-        //                 for (let j = 1; j < 10; j++) {
-        //                     if (number < (j + 1) * Math.pow(10, i) && number > j * Math.pow(10, i)) {
-        //                         array[i] = j;
 
-        //                     } number -= j * Math.pow(10, i);
-        //                     i--;
-        //                 } 
-        //                 return array;
-        //             }
-        //         }
-        //     } 
-        //     return Number(makeArray(number).join(""));
-        // }
-        // console.log(Number(makeArray(68932).join("")));
-        
+
         const reverseNumber = (number) => {
             // find out how many digits the number has.
             let nDigits = Math.ceil(Math.log10(number));
             // find out each digit
             let number1 = 0;
-            for( let i = nDigits-1, j = 0; i >= 0; i--, j++) {
+            for (let i = nDigits - 1, j = 0; i >= 0; i-- , j++) {
                 let p = Math.pow(10, i);
                 let d = Math.floor(number / p);
                 number1 += d * Math.pow(10, j);
@@ -55,16 +35,174 @@
 
         console.log(reverseNumber(5544));
 
+        // const generateString = (string) => {
+        //     let array = [];
+        //     for(i = 0; i < string.length; i++) {
+        //         string += String[i];
+
+        //     }
+        //     return array;
+        // }
+        // let array1 = [d, do, dog, o, og, g]
+        // (string[0],string[0]+string[1],string,string[1],string[1]+string[2],string[2])
+        // let newString = "";
+        //  array[0] = string[0]
+        //  array[4] = string[1]
+        //  array[6] = string[2]
+        // newstring += string[i] 
+        // array[1] += string[0]+string[1]
 
 
 
+        let anObject = { left: 1, right: 2 };
+        console.log(anObject.left);
+        delete anObject.right;
+        console.log(anObject.right);
+        console.log("right" in anObject);
+        console.log("left" in anObject);
+        anObject.middle = 1.5;
+        console.log(anObject.middle);
+        console.log(Object.keys(anObject));
+        Object.assign(anObject, { right: 4, middle: 3 });
+        console.log(anObject);
+        console.log(typeof anObject);
+        let array = [1, 2, 3,]
+        console.log(typeof array);
+        let string = "Hello world";
+        console.log(typeof string);
+        let number = 8;
+        console.log(typeof numble);
+        let boolean = false;
+        console.log(typeof boolean);
+
+        const score = { visitor: 0, home: 0 };
+        score.people = 2;
+        console.log(score);
+        score.visitor = 1;
+        console.log(score.visitor);
+        console.log(score);
+        const score1 = { visitor: 2, home: 1, people: 3 };
+        const score2 = { visitors: 3, home: 0 };
+        const score3 = { home: 0, people: 1 }
+
+        if (Object.score <= Object.score1) {
+            console.log('Objects can be compared.')
+        } else {
+            false;
+        };
+        if (score <= score2) {
+            console.log('Objects can be compared.')
+        } else {
+            console.log('Objects can be compared only if both objects are precisely the same value.')
+        };
+
+        let journal = [];
+        function addEntry(events, squirrel) {
+            journal.push({ events, squirrel });
+        }
+        console.log(journal);
+
+        for (let entry of journal) {
+            console.log(`${entry.events.length} events.`);
+        }
+
+        let array0 = [0, 1, 2, 3, 4, 2, 5, 6, 7, 2];
+        array0.push(10);
+        console.log(array0);
+        array0.shift();
+        console.log(array0);
+        array0.unshift(9);
+        console.log(array0);
+        array0.pop();
+        console.log(array0);
+        console.log(array0.indexOf(2));
+        console.log(array0.indexOf(2, 2));
+        console.log(array0.indexOf(2, 3));
+        console.log(array0.lastIndexOf(2));
+        console.log(array0.lastIndexOf(2, 2));
+        console.log(array0.lastIndexOf(2, 3));
+        console.log(array0.slice(4, 7));
+        console.log(array0.slice(6));
+        console.log(array0.slice(4, 7).concat(array0.slice(6)));
+        console.log(array0);
+
+        function remove(array, index) {
+            return array.slice(0, index).concat(array.slice(index + 1));
+        }
+        console.log(remove(["a", "b", "c", "d", "e", "f"], 2));
 
 
+        // correlation function
+        // receives two arrays of numbers
+        // returns the correlation
 
+        // const correlation = (array1, array2) => {
+        //     // make sure the two arrays have the same length, if they don't have the same length, return null
+        //     // calculate result according to the formula
+        //     // pre-condition
+        //     if (array1.length !== array2.length) {
+        //         return null;
+        //     }
+        //     if (array1.length === 0) {
+        //         return null;
+        //     }
+        //     let mult = 0;
+        //     let sum1 = 0;
+        //     let sum2 = 0;
+        //     let sumArray1 = array1.reduce(function (accumulator, currentValue) {
+        //         return accumulator + currentValue;
+        //     });
+        //     let average1 = sumArray1 / array1.length;
+        //     let sumArray2 = array2.reduce(function (accumulator, currentValue) {
+        //         return accumulator + currentValue;
+        //     });
+        //     let average2 = sumArray2 / array2.length;
+        //     for (let i = 0; i < array1.length; i++) {
+        //         minus1 = array1[i] - average1;
+        //         minus2 = array2[i] - average2;
+        //         mult += (array1[i] - average1) * (array2[i] - average2);
+        //         sum1 += minus1 * minus1;
+        //         sum2 += minus2 * minus2;
+        //     }
+        //     return mult / (Math.sqrt(sum1) * Math.sqrt(sum2));
+        // }
+        const correlation = (array1, array2) => {
+            if (array1.length !== array2.length) {
+                return null;
+            }
+            if (array1.length === 0) {
+                return null;
+            }
+            let mult = 0;
+            let sum1 = 0;
+            let sum2 = 0;
+            let sumArray1 = array1.reduce((a, b) => a + b, 0);
+            // let productArray1 = array1.reduce((a, b) => a * b, 1);
+            let average1 = sumArray1 / array1.length;
+            let sumArray2 = array2.reduce((a, b) => a + b, 0);
+            let average2 = sumArray2 / array2.length;
+            for (let i = 0; i < array1.length; i++) {
+                minus1 = array1[i] - average1;
+                minus2 = array2[i] - average2;
+                mult += (array1[i] - average1) * (array2[i] - average2);
+                sum1 += minus1 * minus1;
+                sum2 += minus2 * minus2;
+            }
+            return mult / (Math.sqrt(sum1) * Math.sqrt(sum2));
+        }
+        let x = [1, 2, 6, 1, 7, 8, 1, 3, 1, 5, 6, 7, 1, 9, 1, 4];
+        let y = [103, 106, 118, 103, 121, 124, 103, 109, 103, 115, 118, 121, 103, 127, 103, 23];
+        console.log(correlation(x, y));
+        console.log(correlation([3, 3, 4, 5, 6], [3, 3, 4, 5, 6, 8]));
 
-
-
-
+        // phi function
+        // receives two arrays of numbers
+        // returns the correlation, using the second formula
+        const phi = (array1, array2) => {
+            // make sure ... same length
+            // make sure all numbers are either 0 or 1.
+            // create the pivot table: n00, n01, n10, n11
+        }
 
 
 
