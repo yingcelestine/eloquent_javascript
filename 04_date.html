@@ -82,25 +82,49 @@
         console.log(score.visitor);
         console.log(score);
         const score1 = { visitor: 2, home: 1, people: 3 };
-        const score2 = { visitors: 3, home: 0 };
+        const score2 = { visitor: 2, home: 1, people: 3 };
         const score3 = { home: 0, people: 1 }
 
-        if (Object.score <= Object.score1) {
-            console.log('Objects can be compared.')
+        const compareScores = (s1, s2) => {
+            return s1.visitor === s2.visitor && s1.home === s2.home && s1.people === s2.people;
+        }
+
+        if (score2 == score1) {
+            console.log('score2 <= score1')
         } else {
-            false;
+            console.log("socre2 > score1");
         };
-        if (score <= score2) {
+        if (score == score2) {
             console.log('Objects can be compared.')
         } else {
             console.log('Objects can be compared only if both objects are precisely the same value.')
         };
 
+        if (compareScores(score1, score2)) {
+            console.log('score2 == score1')
+        } else {
+            console.log("socre2 != score1");
+        };
+
         let journal = [];
-        function addEntry(events, squirrel) {
-            journal.push({ events, squirrel });
+        function addEntry(events, outcome) {
+            // journal.push({ events, outcome});
+            journal.push({
+                events: events,
+                outcome: outcome
+            })
+            // let result = {};
+            // result[String(events)] = events;
+            // result[String(squirrel)] = squirrel;
+            // journal.push(result);
         }
+        addEntry([1, 2, 3], false);
+        addEntry([6, 9, 99, 88, 76], true);
         console.log(journal);
+        for (let i = 0; i < journal.length; i++) {
+            let entry = journal[i];
+            console.log(`${entry.events.length} events.`);
+        }
 
         for (let entry of journal) {
             console.log(`${entry.events.length} events.`);
@@ -131,6 +155,11 @@
         }
         console.log(remove(["a", "b", "c", "d", "e", "f"], 2));
 
+        console.log(String(11).padStart(4, "0"));
+        console.log(Math.floor(3.157));
+        console.log(Math.ceil(3.157));
+        console.log(Math.round(3.557));
+        console.log(Math.abs(-3.157));
 
         // correlation function
         // receives two arrays of numbers
@@ -158,11 +187,11 @@
         //     });
         //     let average2 = sumArray2 / array2.length;
         //     for (let i = 0; i < array1.length; i++) {
-        //         minus1 = array1[i] - average1;
-        //         minus2 = array2[i] - average2;
+        //         difference1 = array1[i] - average1;
+        //         difference2 = array2[i] - average2;
         //         mult += (array1[i] - average1) * (array2[i] - average2);
-        //         sum1 += minus1 * minus1;
-        //         sum2 += minus2 * minus2;
+        //         sum1 += difference1 * difference1;
+        //         sum2 += difference2 * difference2;
         //     }
         //     return mult / (Math.sqrt(sum1) * Math.sqrt(sum2));
         // }
@@ -182,11 +211,11 @@
             let sumArray2 = array2.reduce((a, b) => a + b, 0);
             let average2 = sumArray2 / array2.length;
             for (let i = 0; i < array1.length; i++) {
-                minus1 = array1[i] - average1;
-                minus2 = array2[i] - average2;
+                difference1 = array1[i] - average1;
+                difference2 = array2[i] - average2;
                 mult += (array1[i] - average1) * (array2[i] - average2);
-                sum1 += minus1 * minus1;
-                sum2 += minus2 * minus2;
+                sum1 += difference1 * difference1;
+                sum2 += difference2 * difference2;
             }
             return mult / (Math.sqrt(sum1) * Math.sqrt(sum2));
         }
@@ -202,15 +231,65 @@
             // make sure ... same length
             // make sure all numbers are either 0 or 1.
             // create the pivot table: n00, n01, n10, n11
+            function checkNumber(number) {
+                return number === 0 || number === 1;
+            }
+            if (array1.length !== array2.length ||
+                array1.length === 0 ||
+                array1.every(checkNumber) === false ||
+                array2.every(checkNumber) === false) {
+                return null;
+            }
+            let count00 = 0;
+            let count01 = 0;
+            let count10 = 0;
+            let count11 = 0;
+            for (let i = 0; i < array1.length; i++) {
+                if (0 === array2[i] && array1[i] === 0) {
+                    count00++;
+                } else if (array1[i] === 0 && array2[i] === 1) {
+                    count01++;
+                } else if (1 === array2[i] && array1[i] === 1) {
+                    count11++;
+                } else if (array1[i] === 1 && array2[i] === 0) {
+                    count10++;
+                }
+            }
+            return (count11 * count00 - count10 * count01) / Math.sqrt((count10 + count11) * (count01 + count00) * (count01 + count11) * (count00 + count10));
         }
+        console.log(phi([0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0], [1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1]));
 
+        // const range = (start, end) => {
+        //     let array = [];
+        //     if (start >= end) {
+        //         for (i = 0; i < start - end + 1; i++) {
+        //             array.push(start - i);
+        //         }
+        //         return array;
+        //     }
+        //     for (i = 0; i < end - start + 1; i++) {
+        //         array.push(start + i);
+        //     }
+        //     return array;
+        // }
+        // console.log(range(5, 2));
 
+        const range = (start, end) => {
+            let array = [];
+            if (start >= end) {
+                for (let i = start; i >= end; i--) {
+                    array.push(i);
+                }
+                return array;
+            }
+            for (let i = start; i <= end; i++) {
+                array.push(i);
+            }
+            return array;
+        }
+        console.log(range(5, 2));
 
-
-
-
-
-
+        console.log(range(3, 12));
 
 
 
