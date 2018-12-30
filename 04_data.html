@@ -291,11 +291,76 @@
 
         console.log(range(3, 12));
 
+        // const range1 = (start, end, step) => {
+        //     let array = [start];
+        //     let i = start + step;
+        //     if (start >= end && i >= end) {
+        //         array.push(i);
+        //         i += step;
+        //     }
+        //     else if(start < end, i <= end) {
+        //         array.push(i);
+        //         i += step;
 
+        //     }
+        //     return array;
+        // }
 
+        const range1 = (start, end, step) => {
+            let array = [];
+            if (step === 0) { return array; }
+            if (start >= end) {
+                for (let i = start; i >= end; i += step) {
+                    array.push(i);
+                }
+                return array;
+            }
+            for (let i = start; i <= end; i += step) {
+                array.push(i);
+            }
+            return array;
+        }
 
+        console.log(range1(5, 2, -2));
 
+        console.log(range1(3, 12, 2));
 
+        const reverseArray = (array) => {
+            let newArray = [];
+            for (let i = array.length - 1; i >= 0; i--) {
+                newArray.push(array[i])
+            }
+            return newArray;
+        }
+        console.log(reverseArray([3, 4, 5, 6]));
+
+        // const reverseArrayInPlace = (array) => {
+        //     if (array.length === 0) {
+        //         return;
+        //     }
+        //     for (let i = array.length - 1; i >= 0; i--) {
+        //         array.push(array[i]);
+        //     }
+        //     const len = array.length / 2;
+        //     for (let i = 0; i < len; i++) {
+        //         array.shift();          
+        //     }
+        // }
+
+        const reverseArrayInPlace = (array) => {
+            const len = Math.floor(array.length / 2);
+            for(let i = 0, j = array.length - 1; i < len; i++, j--) {
+                const temporary = array[i] ;
+                array[i] = array[j];
+                array[j] = temporary;
+            }
+        }
+
+        {
+            let a = [4, 3, 2, 1];
+            reverseArrayInPlace(a);
+            console.log(a);
+        }
 
 
     </script>
