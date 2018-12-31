@@ -349,8 +349,8 @@
 
         const reverseArrayInPlace = (array) => {
             const len = Math.floor(array.length / 2);
-            for(let i = 0, j = array.length - 1; i < len; i++, j--) {
-                const temporary = array[i] ;
+            for (let i = 0, j = array.length - 1; i < len; i++ , j--) {
+                const temporary = array[i];
                 array[i] = array[j];
                 array[j] = temporary;
             }
@@ -362,6 +362,79 @@
             console.log(a);
         }
 
+        // singly-linked list
+        // let list = {
+        //   value: 1,
+        //   rest: {
+        //     value: 2,
+        //     rest: {
+        //       value: 3,
+        //       rest: null
+        //     }
+        //   }
+        // };
+
+        let list0 = { rest: null };
+
+        const listToArray = (list) => {
+            let array = [];
+            if (!("value" in list)) {
+                return array;
+            }
+            array.push(list.value);
+            let r = list.rest;
+            while (r != null) {
+                array.push(r.value);
+                r = r.rest;
+            }
+            return array;
+        }
+
+        // console.log(listToArray(list));
+
+
+
+        // const arrayTolist = (array) => {
+        //     let list = {};
+        //     if (array.length === 0) {
+        //         return list;
+        //     }
+
+        //     list = {
+        //         value: array[array.length - 1],
+        //         rest: null
+        //     };
+
+
+        //     for (let i = array.length - 2; i >= 0; i--) {
+        //         list = {
+        //             value: array[i],
+        //             rest: list
+        //         };
+
+        //     }
+
+        //     return list;
+        // }
+
+        
+
+        const _arrayTolist = (array, list, index) => {
+            if(index < 0) {
+                return list;
+            }
+            list = {
+                value : array[index],
+                rest: list
+            };
+            return _arrayTolist(array, list, index - 1);
+        }
+
+        const arrayTolist = (array) => {
+            return _arrayTolist(array, {}, array.length - 1);
+        }
+
+        console.log(arrayTolist([5, 4, 3, 2, 1]));
 
     </script>
 </body>
