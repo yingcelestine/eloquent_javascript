@@ -417,14 +417,14 @@
         //     return list;
         // }
 
-        
+
 
         const _arrayTolist = (array, list, index) => {
-            if(index < 0) {
+            if (index < 0) {
                 return list;
             }
             list = {
-                value : array[index],
+                value: array[index],
                 rest: list
             };
             return _arrayTolist(array, list, index - 1);
@@ -435,6 +435,115 @@
         }
 
         console.log(arrayTolist([5, 4, 3, 2, 1]));
+
+
+        const list = {
+            value: 5,
+            rest: {
+                value: 8,
+                rest: {
+                    value: 3,
+                    rest: {
+                        value: 4,
+                        rest: null
+                    }
+                }
+            }
+        }
+
+        const nth = (list, n) => {
+            if (n === 0) {
+                return list.value;
+            }
+            return nth(list.rest, n - 1);
+        }
+
+        console.log(nth(list, 2))
+
+        // nElements
+        // receives a list
+        // returns the number of elements in the list
+        // for example, nElements(list) == 4
+        // write a recursive function
+        const nElements = (list) => {
+            if (!list || !("value" in list)) {
+                return 0;
+            }
+            return 1 + nElements(list.rest);
+        }
+
+        console.log(nElements(list));
+
+        // sum
+        // receives a number n
+        // return the value of 0 + 1 + 2 + ... + n
+        // write a recursive function
+        const sum = (n) => {
+            if (n === 0) {
+                return 0;
+            }
+            return n + sum(n - 1);
+        }
+        console.log(sum(10));
+
+        // nDigits
+        // receives a number n
+        // return the number of digits for n
+        // nDigits(58891) === 5
+        // write a recursive function
+
+        const nDigits = (n) => {
+            let string = String(n);
+            if (string.length === 1) {
+                return 1;
+            }
+            n = Number(string.substr(1));
+            return 1 + nDigits(n);
+        }
+
+        // const nDigits = (n) => {
+        //     if (n < 1) return 0;
+        //     return 1 + nDigits(n / 10);
+        // }
+
+        console.log(nDigits(588912));
+        // 1 + nDigits(5889.1)
+        // 2 + nDigits(588.91)
+        // 3 + nDigits(58.891)
+        // 4 + nDigits(5.8891)
+        // 5 + nDigits(0.58891)
+
+
+
+
+
+        // fibonacci
+        // receives a number n
+        // returns the nth number of the fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+        // recursive helper
+        const _fibonacci = (n, a, b) => {
+
+        }
+
+        const fibonacci = (n) => {
+            return _fibonacci(n, 0, 1);
+        }
+
+
+
+        // thrinity
+        // receives a number n
+        // returns the nth number of the thrinity sequence: 0, 1, 2, 3, 6, 12, 21, 39, ...
+        // recursive helper
+        const _thrinity = (n, a, b) => {
+
+        }
+
+        const thrinity = (n) => {
+            return _thrinity(n, 0, 1, 2);
+        }
+
+
 
     </script>
 </body>

@@ -197,7 +197,7 @@
         }
         console.log(reverseString("Hello"));
 
-        
+
 
         // boxString function
         // receives a string
@@ -299,11 +299,11 @@
             let count = 0;
             for (i = 0; i < string.length; i++) {
                 if (string[i] === char) {
-                    count ++;
+                    count++;
                 }
             } return count;
         }
-console.log(countChar("BBHUIKJGGJUBBB", "J"));
+        console.log(countChar("BBHUIKJGGJUBBB", "J"));
 
         // 2 * power(2, 2)
         // 2 * (2 * power(2, 1))
@@ -328,6 +328,70 @@ console.log(countChar("BBHUIKJGGJUBBB", "J"));
         //     console.log(mycounter());
         //     i++;
         // }
+
+        // uniqueChars function
+        // receive a string
+        // return an array of unique characters
+        // for example, uniqueChars("madam") should return ["m", "a", "d"]
+
+        const uniqueChars = (string) => {
+            let array = [];
+            for (let i = 0; i < string.length; i++) {
+                if (array.indexOf(string[i]) === -1) {
+                    array.push(string[i]);
+                }
+            }
+            return array;
+        };
+        console.log(uniqueChars('madam'));
+
+        // permutation functiion
+        // receive an array
+        // return the permutations of this array
+        // for example, permutation([1, 2, 3]) should return :
+        // [
+        //   [1, 2, 3],
+        //   [1, 3, 2],
+        //   [2, 1, 3],
+        //   [2, 3, 1],
+        //   [3, 2, 1],
+        //   [3, 1, 2]
+        // ]
+        function permutation(array) {
+            if (!array.length) {
+                return [[]];
+            }
+            let result = [];
+            for (let i = 0; i < array.length; i++) {
+                let take_i = array.slice(i, i + 1);
+                let not_i = []
+                for (let j = 0; j < array.length; j++) {
+                    if (j != i) { not_i.push(array[j]); }
+                }
+                let not_i_permutation = permutation(not_i);
+                not_i_permutation.forEach((p) => {
+                    result.push(take_i.concat(p));
+                })
+            }
+            return result;
+        }
+
+        let a = [1, 2, 3, 4];
+        console.log(permutation(a));
+
+        // join function
+        // receive an array of characters
+        // returns a string with these character
+        // for example, join(["c", "a", "n"]) will return "can"
+
+        const join = (array) => {
+            let string = "";
+            for (i = 0; i < array.length; i++) {
+                string += array[i];
+            }
+            return string;
+        }
+        console.log(join(["m", "a", "d", "a", "m"]));
 
     </script>
 </body>
