@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script>
+
+        let SCRIPTS = [{
+            name: "Coptic",
+            ranges: [[994, 1008], [11392, 11508], [11513, 11520]],
+            direction: "ltr",
+            year: -200,
+            living: true,
+            link: "https://en.wikipedia.org/wiki/Coptic_alphabet"
+        }, 2, 3,];
+        function filter(array, test) {
+            let passed = [];
+            for (let element of array) {
+                if (test(element)) {
+                    passed.push(element);
+                }
+            }
+            return passed;
+        }
+        console.log(filter(SCRIPTS, script => script.living));
+
+        function reduce(array, combine, start) {
+            let current = start;
+            for (let element of array) {
+                current = combine(current, element);
+            }
+            return current;
+        }
+        console.log(reduce([1, 2, 3, 4], (a, b) => a + b, 0));
+
+
+
+    </script>
+</body>
+
+</html>
